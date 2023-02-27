@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.empty-body {
+  height: 95vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-part {
+  padding-bottom: 3vh;
+}
+
+.empty-body p {
+  font-weight: lighter;
+  font-size: 2.5rem;
+}
+
+.sync-button {
+  background-color: #4C63AA;
+  width: 14vw;
+  height: 7vh;
+  color: white;
+  border-radius: 75px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}

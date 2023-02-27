@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&display=swap');
+
+.all-songs {
+  padding-right: 10vw;
+  padding-left: 10vw;
+  background: #F5F5F5;
+}
+
+@media screen and (min-width: 481px) {
+  .all-songs {
+    margin: 0vh 13vw;
+  }
+}
+
+.music-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header-grid {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 3.5vh;
+  padding-bottom: 3.5vh;
+  align-items: center;
+}
+
+.header-grid p {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.header-grid img {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .all-songs {
+    margin: 0;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}

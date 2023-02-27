@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;700;800&display=swap');
+
+.card-even {
+  height: 310px;
+  width: 310px;
+  background-color: #DFDFDF;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  filter: drop-shadow(3px 3px 5px grey);
+}
+
+.card-odd {
+  height: 310px;
+  width: 310px;
+  background-color: #ABABAB;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  filter: drop-shadow(3px 3px 5px grey);
+}
+
+.card-img img {
+  margin-top: 12px;
+  height: 205px;
+  width: 205px;
+  border-radius: 50%;
+  border: 1.5px solid black;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+}
+
+.song-name {
+  font-size: x-large;
+  font-weight: 200;
+  text-align: left;
+  width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.song-artist {
+  font-weight: bolder;
+  text-align: left;
+  font-size: smaller;
+  text-overflow: ellipsis;
+}
+
+.likes {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.likes-count {
+  position: absolute;
+  color: white;
+}
+
+.card-even:hover {
+  transition-duration: 0.2s;
+  transform: scale(1.05);
+}
+
+.card-even {
+  transition: all 0.2s ease-in-out
+}
+
+.card-odd {
+  transition: all 0.2s ease-in-out
+}
+
+.card-odd:hover {
+  transition-duration: 0.2s;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 480px) {
+  .card-even {
+    width: 400px;
+  }
+
+  .card-odd {
+    width: 400px;
+  }
+
+  .card-footer {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}

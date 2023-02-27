@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&display=swap');
+
+.genres-main-container {
+  margin: 0vh 13vw;
+  background: #F5F5F5;
+}
+
+.genre-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3.5vh 10vw;
+  align-items: center;
+}
+
+.genre-header p {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.genre-main-container {
+  margin: 0vh 13vw;
+  background: #F5F5F5;
+}
+
+.genre-img {
+  padding-left: 9.5vw;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 30px;
+}
+
+.genre-img button {
+  width: 11.5vw;
+  height: 5vh;
+  position: absolute;
+  border: none;
+  background-color: #4C63AA;
+  color: white;
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: x-large;
+  border-radius: 40px;
+  left: 266px;
+}
+
+.genre-container {
+  padding-bottom: 4vh;
+
+}
+
+.genre-header img {
+  cursor: pointer;
+}
+
+.music-cardss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 10vw;
+  padding-left: 10vw;
+}

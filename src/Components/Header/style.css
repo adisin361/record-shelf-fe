@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700;800&display=swap');
+
+.header {
+  background-color: #38497E;
+  color: white;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+}
+
+.main-heading {
+  font-size: 2rem;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.inner-heading {
+  font-weight: 800;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 12vh;
+  }
+}
