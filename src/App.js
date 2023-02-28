@@ -7,6 +7,7 @@ import Genre from './Pages/Genre';
 import { RecordProvider } from './context/recordsContext';
 import PageNotFound from './Components/PageNotFound';
 import Error from './Components/Error';
+import React from 'react';
 function App() {
   return (
 
