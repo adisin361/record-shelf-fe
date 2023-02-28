@@ -1,45 +1,42 @@
 import React from 'react';
 import './style.css';
+import PropTypes from 'prop-types';
 import heartRedSrc from '../../design/assets/heart-red.svg';
 import heartGreySrc from '../../design/assets/heart-gray.svg';
 import makeRequest from '../../utils/makeRequest';
 import { RECORD_LIKES } from '../../Constants/apiEndPoints';
-import PropTypes from 'prop-types';
 
-const MusicCard = ({ recordData, index }) => {
-
+function MusicCard({ recordData, index }) {
   const [likeCount, setLikeCount] = React.useState(recordData.likes.count);
   const [isLiked, setIsLiked] = React.useState(recordData.likes.like);
   const [error, setError] = React.useState();
 
   const handleLike = async () => {
     const likeData = await makeRequest(RECORD_LIKES(recordData.id), {
-      data: { like: !isLiked }
+      data: { like: !isLiked },
     });
     setLikeCount(likeData.data.count);
     setIsLiked(likeData.data.like);
   };
 
   return (
-    <>
-      <div className={index % 2 === 0 ? "card-even" : "card-odd"}>
-        <div className='card-img'>
-          <img src={recordData.imageUrl} alt="record_picture" />
+    <div className={index % 2 === 0 ? 'card-even' : 'card-odd'}>
+      <div className="card-img">
+        <img src={recordData.imageUrl} alt="record_picture" />
+      </div>
+      <div className="card-footer">
+        <div className="meta-data">
+          <p className="song-name">{recordData.name}</p>
+          <p className="song-artist">{recordData.artist.name}</p>
         </div>
-        <div className='card-footer'>
-          <div className='meta-data'>
-            <p className='song-name'>{recordData.name}</p>
-            <p className='song-artist'>{recordData.artist.name}</p>
-          </div>
-          <div className='likes' onClick={handleLike}>
-            <img src={isLiked ? heartRedSrc : heartGreySrc} alt="" />
-            <p className='likes-count'>{likeCount}</p>
-          </div>
+        <div className="likes" onClick={handleLike}>
+          <img src={isLiked ? heartRedSrc : heartGreySrc} alt="" />
+          <p className="likes-count">{likeCount}</p>
         </div>
       </div>
-    </>
-  )
-};
+    </div>
+  );
+}
 
 MusicCard.propTypes = {
   recordData: PropTypes.shape({
@@ -48,16 +45,20 @@ MusicCard.propTypes = {
     imageUrl: PropTypes.string.isRequired,
     artist: PropTypes.shape({
       id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
     }),
     genre: PropTypes.shape({
       id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired
+      name: PropTypes.string.isRequired,
+    }),
+    likes: PropTypes.shape({
+      like: PropTypes.bool.isRequired,
+      count: PropTypes.number.isRequired
     })
   }),
 
   index: PropTypes.number.isRequired,
-}
+};
 
 // {
 //   "id": "cd3cc1e3-e1e0-4ccd-bc67-747648985838",
@@ -73,4 +74,3 @@ MusicCard.propTypes = {
 //   }
 // },
 export default MusicCard;
-
