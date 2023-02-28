@@ -1,0 +1,11 @@
+.error {
+  height: 94vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error p {
+  font-family: monospace;
+  font-size: xx-large;
+}

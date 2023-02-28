@@ -24,6 +24,7 @@
   padding-top: 3.5vh;
   padding-bottom: 3.5vh;
   align-items: center;
+  text-align: left;
 }
 
 .header-grid p {
@@ -42,4 +43,17 @@
     padding-left: 5vw;
     padding-right: 5vw;
   }
+}
+
+.recordDataLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 94vh;
+}
+
+.recordDataLoader p {
+  font-family: monospace;
+  font-weight: 700;
+  font-size: xx-large
 }

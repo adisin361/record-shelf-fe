@@ -11,7 +11,7 @@ import uniqueGenre from '../../utils/uniqueGenre.js';
 
 const AllSongs = () => {
   const { records, setRecords, genres, setGenres } = React.useContext(RecordsContext);
-  const [error, setError] = React.useState();
+  // const [error, setError] = React.useState();
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -25,19 +25,11 @@ const AllSongs = () => {
         setRecords(response)
       })
       .catch((e) => {
-        setError(e.message);
+        navigate(`/error/${e?.response?.status}`);
       })
   }, []);
 
-  if (error) {
-    return (
-      <div className='recordsError'>
-        <p>{error}</p>
-      </div>
-    );
-  }
-
-  return records ? (
+  return records.length !== 0 ? (
     <>
       <div className="all-songs">
         <div className='header-grid'>
