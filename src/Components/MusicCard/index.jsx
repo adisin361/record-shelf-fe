@@ -3,32 +3,21 @@ import './style.css';
 import heartRedSrc from '../../design/assets/heart-red.svg';
 import heartGreySrc from '../../design/assets/heart-gray.svg';
 import makeRequest from '../../utils/makeRequest';
-import { GET_LIKES, RECORD_LIKES } from '../../Constants/apiEndPoints';
+import { RECORD_LIKES } from '../../Constants/apiEndPoints';
 import PropTypes from 'prop-types';
 
 const MusicCard = ({ recordData, index }) => {
 
-  const [likeCount, setLikeCount] = React.useState();
-  const [isLiked, setIsLiked] = React.useState(false);
+  const [likeCount, setLikeCount] = React.useState(recordData.likes.count);
+  const [isLiked, setIsLiked] = React.useState(recordData.likes.like);
   const [error, setError] = React.useState();
 
-  React.useEffect(() => {
-    makeRequest(GET_LIKES(recordData.id))
-      .then((response) => {
-        setLikeCount(response.data.count);
-        setIsLiked(response.data.like);
-      })
-      .catch((e) => {
-        setError(e.message)
-      })
-  }, []);
-
   const handleLike = async () => {
-    await makeRequest(RECORD_LIKES(recordData.id), {
+    const likeData = await makeRequest(RECORD_LIKES(recordData.id), {
       data: { like: !isLiked }
     });
-    setLikeCount(isLiked ? likeCount - 1 : likeCount + 1);
-    setIsLiked(!isLiked);
+    setLikeCount(likeData.data.count);
+    setIsLiked(likeData.data.like);
   };
 
   return (
